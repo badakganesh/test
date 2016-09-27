@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# EWS 1.0.2 Control Script
+#
+# chkconfig:  45 92 08
+# description: ews
+
+EWS_HOME=/opt/download/jws-3.0/httpd
+
+case $1 in
+start)
+echo "Start EWS 3.0.3"
+$EWS_HOME/sbin/apachectl start
+;;
+stop)
+echo "Stop EWS 3.0.3"
+$EWS_HOME/sbin/apachectl stop
+;;
+restart)
+echo "Restart EWS 3.0.3"
+$EWS_HOME/sbin/apachectl restart
+;;
+status)
+$EWS_HOME/sbin/apachectl status
+;;
+*)
+
+;;
+esac

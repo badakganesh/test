@@ -1,0 +1,10 @@
+---
+- name: copy file
+  hosts: all
+  sudo: yes
+  sudo_user: root
+  roles:
+  - jws
+
+
+
