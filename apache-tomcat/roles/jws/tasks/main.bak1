@@ -1,0 +1,74 @@
+---
+# - name: Download JWS-App
+#   get_url: url=https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=44391 dest=/opt/  url_username=ganesh_rh url_password=Ganeshredhat6@ force_basic_auth=yes validate_certs=no
+# - name: "download file"                       
+#   uri:                                        
+#       url: "https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=44391"    
+#       method: GET                               
+#       user: "ganesh_rh"            
+#       password: "Ganeshredhat6@"    
+#       force_basic_auth: yes                    
+#       dest: /opt           
+#       return_content: yes
+#       validate_certs: no
+
+#- name: Download JWS-HTTPD
+#  get_url: url=https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=webserver&productChanged=yes/jws-httpd-3.0.3-RHEL7-x86_64.zip dest=/opt/jws-httpd-3.0.3-RHEL7-x86_64.zip
+#- name: Extract Archieve JWS-HTTPD
+ - unarchive: src=/opt/jws-httpd-3.0.3-RHEL7-x86_64.zip dest=/opt/jws/ setype=zip copy=no
+ - unarchive: src=/opt/jws-application-servers-3.0.3-RHEL7-x86_64.zip dest=/opt/jws/ setype=zip copy=no
+
+ - name: Add group "tomcat"
+   group: name=tomcat
+ - name: add user "tomcat"
+   user: name=tomcat group=tomcat home=/opt/jws/jws-3.0/tomcat8 createhome=no
+   become: True
+   become_method: sudo
+ - name: Change ownership to tomcat8 installation
+   file: path=/opt/jws/jws-3.0/tomcat8 owner=tomcat group=tomcat state=directory recurse=yes
+ - name: Configure Tomcat server
+   template: src=server.xml dest=/opt/jws/jws-3.0/tomcat8/conf/
+#  copy: src=/etc/ansible/apache-tomcat/roles/jws/templates/server.xml dest=/opt/jws/jws-3.0/tomcat8/conf/
+#  notify: restart tomcat
+ - name: Configure Tomcat users
+   template: src=tomcat-users.xml dest=/opt/jws/jws-3.0/tomcat8/conf/
+#  copy: src=/etc/ansible/apache-tomcat/roles/jws/templates/tomcat-users.xml dest=/opt/jws/jws-3.0/tomcat8/conf/
+#  notify: restart tomcat
+ - name: Install Tomcat init script
+   template: src=tomcat dest=/etc/init.d/ mode=0755
+ - name: Start Tomcat
+   service: name=tomcat pattern=/usr/bin/java state=started enabled=yes
+  
+ - name: Install apache httpd server
+   command: chdir=/opt/jws/jws-3.0/httpd/ ./.postinstall
+ - name: Configure Apache httpd server httpd.conf
+   template: src=httpd.conf dest=/opt/jws/jws-3.0/httpd/conf/ 
+ - name: configure workers.properties
+  # template: src=workers.properties dest=/opt/jws/jws-3.0/httpd/conf.d/
+   template: src=workers.properties dest={{ conf_file }}
+
+ - name: configure mod_jk.conf
+  # template: src=mod_jk.conf dest=/opt/jws/jws-3.0/httpd/conf.d/
+   template: src=mod_jk.conf dest={{ conf_file }}
+# - name: Configure mod_cluster.conf
+#   template: src=mod_cluster.conf dest=/opt/jws/jws-3.0/httpd/conf.d/
+ - name: Install apachectl init script
+   template: src=apachectl dest=/etc/init.d/ mode=0755
+ - name: start apache
+   service: name=apachectl pattern=/etc/init.d/ state=started enabled=yes
+#- name: Extract Archieve JWS-App
+#- unarchive: src=/opt/jws-application-servers-3.0.3-RHEL7-x86_64.zip dest=/opt/jws/ remote_src=yes
+
+  
+  #          - name: Initialize database
+  #            command: sudo postgresql-setup initdb
+  #            - name: Start postgresql
+  #              service: name=postgresql state=started
+  #              - name: Create database
+  #                postgresql_db: name=postgres
+  #                  become: True
+  #                    become_user: postgres
+  #                    - name: Create postgres user
+  #                      postgresql_user: db=postgres name=postgres password=postgres priv=ALL role_attr_flags=CREATEDB,NOSUPERUSER state=present
+  #                        become: True
+  #                          become_user: postgres

@@ -1,0 +1,20 @@
+---
+- name: Install postgres
+  #hosts: 192.168.1.154
+  yum: pkg={{ item }} state=present
+  with_items:
+  - postgresql-server
+  - python-psycopg2
+  - postgresql-contrib
+- name: Initialize database
+  command: sudo postgresql-setup initdb
+- name: Start postgresql
+  service: name=postgresql state=started
+- name: Create database
+  postgresql_db: name=postgres
+  become: True
+  become_user: postgres
+- name: Create postgres user
+  postgresql_user: db=postgres name=postgres password=postgres priv=ALL role_attr_flags=CREATEDB,NOSUPERUSER state=present
+  become: True
+  become_user: postgres

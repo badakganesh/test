@@ -1,0 +1,76 @@
+---
+ - unarchive: src=/opt/download/jws-httpd-3.0.3-RHEL6-x86_64.zip dest=/opt/download/ setype=zip copy=no
+   delegate_to: 192.168.1.152
+ - unarchive: src=/opt/jws-application-servers-3.0.3-RHEL7-x86_64.zip dest=/opt/download/ setype=zip copy=no
+   delegate_to: 192.168.1.154
+
+ - name: Add group "tomcat"
+   group: name=tomcat
+   delegate_to: 192.168.1.154
+
+ - name: add user "tomcat"
+   user: name=tomcat group=tomcat home=/opt/download/jws-3.0/tomcat8 createhome=no
+   become: True
+   become_method: sudo
+   delegate_to: 192.168.1.154
+
+ - name: Change ownership to tomcat8 installation
+   file: path=/opt/download/jws-3.0/tomcat8 owner=tomcat group=tomcat state=directory recurse=yes
+   delegate_to: 192.168.1.154
+
+ - name: Configure Tomcat server
+   template: src=server.xml dest=/opt/download/jws-3.0/tomcat8/conf/
+   delegate_to: 192.168.1.154
+
+
+ - name: Configure Tomcat users
+   template: src=tomcat-users.xml dest=/opt/download/jws-3.0/tomcat8/conf/
+   delegate_to: 192.168.1.154
+
+ - name: Install Tomcat init script
+   template: src=tomcat dest=/etc/init.d/ mode=0755
+   delegate_to: 192.168.1.154
+
+ - name: Start Tomcat
+   service: name=tomcat pattern=/usr/bin/java state=started enabled=yes
+   delegate_to: 192.168.1.154
+
+
+ - name: Install apache httpd server
+   command: chdir=/opt/download/jws-3.0/httpd/ ./.postinstall
+   delegate_to: 192.168.1.152
+ - name: Configure Apache httpd server httpd.conf
+   template: src=httpd.conf dest=/opt/download/jws-3.0/httpd/conf/
+   delegate_to: 192.168.1.152
+
+ - name: configure workers.properties
+   template: src=workers.properties dest=/opt/download/jws-3.0/httpd/conf.d/
+   delegate_to: 192.168.1.152
+
+ - name: configure mod_jk.conf
+   template: src=mod_jk.conf dest=/opt/download/jws-3.0/httpd/conf.d/
+   delegate_to: 192.168.1.152
+
+ - name: Install apachectl init script
+   template: src=apachectl dest=/etc/init.d/ mode=0755
+   delegate_to: 192.168.1.152
+
+ - name: start apache
+   service: name=apachectl pattern=/etc/init.d/ state=started enabled=yes
+   delegate_to: 192.168.1.152
+
+  #
+
+
+
+
+# - name : copy file
+# - get_url: url=https://access.redhat.com/cspdownload/b7d2a98520247ed81bfb6685d42c2c74/57c51818/JWS-3.0.3/jws-application-servers-3.0.3-RHEL7-x86_64.zip url_username=pandurang@taashee.com url_password=mimarathi dest=/opt/download
+#   template: src=httpd.conf dest=/opt/download/
+#   delegate_to: 192.168.1.154
+
+# - name : copy file
+# - get_url: url=https://access.redhat.com/cspdownload/b7d2a98520247ed81bfb6685d42c2c74/57c51818/JWS-3.0.3/jws-application-servers-3.0.3-RHEL7-x86_64.zip url_username=pandurang@taashee.com url_password=mimarathi dest=/opt/download
+#   template: src=httpd.conf dest=/opt/download/
+#   delegate_to: 192.168.1.152
+#
