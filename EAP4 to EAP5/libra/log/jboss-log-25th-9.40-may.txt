@@ -1,0 +1,343 @@
+===============================================================================
+.
+  JBoss Bootstrap Environment
+.
+  JBOSS_HOME: D:\Java\jboss-4.0.3SP1\bin\\..
+.
+  JAVA: C:\Program Files\Java\jdk1.5.0_03\bin\java
+.
+  JAVA_OPTS:  -Dprogram.name=run.bat -Xms128m -Xmx512m
+.
+  CLASSPATH: C:\Program Files\Java\jdk1.5.0_03\lib\tools.jar;D:\Java\jboss-4.0.3SP1\bin\\run.jar
+.
+===============================================================================
+.
+21:40:56,421 INFO  [Server] Starting JBoss (MX MicroKernel)...
+21:40:56,437 INFO  [Server] Release ID: JBoss [Zion] 4.0.3SP1 (build: CVSTag=JBoss_4_0_3_SP1 date=200510231054)
+21:40:56,437 INFO  [Server] Home Dir: D:\Java\jboss-4.0.3SP1
+21:40:56,437 INFO  [Server] Home URL: file:/D:/Java/jboss-4.0.3SP1/
+21:40:56,437 INFO  [Server] Patch URL: null
+21:40:56,437 INFO  [Server] Server Name: default
+21:40:56,437 INFO  [Server] Server Home Dir: D:\Java\jboss-4.0.3SP1\server\default
+21:40:56,437 INFO  [Server] Server Home URL: file:/D:/Java/jboss-4.0.3SP1/server/default/
+21:40:56,437 INFO  [Server] Server Temp Dir: D:\Java\jboss-4.0.3SP1\server\default\tmp
+21:40:56,437 INFO  [Server] Root Deployment Filename: jboss-service.xml
+21:40:56,765 INFO  [ServerInfo] Java version: 1.5.0_03,Sun Microsystems Inc.
+21:40:56,765 INFO  [ServerInfo] Java VM: Java HotSpot(TM) Client VM 1.5.0_03-b07,Sun Microsystems Inc.
+21:40:56,765 INFO  [ServerInfo] OS-System: Windows XP 5.1,x86
+21:40:57,156 INFO  [Server] Core system initialized
+21:40:59,203 INFO  [WebService] Using RMI server codebase: http://sun-network:8083/
+21:40:59,218 INFO  [Log4jService$URLWatchTimerTask] Configuring from URL: resource:log4j.xml
+21:40:59,812 INFO  [NamingService] Started jndi bootstrap jnpPort=1099, rmiPort=1098, backlog=50, bindAddress=/0.0.0.0, Client SocketFactory=null, Server SocketFactory=org.jboss.net.sockets.DefaultSocketFactory@ad093076
+21:41:04,500 INFO  [Embedded] Catalina naming disabled
+21:41:04,859 INFO  [Http11Protocol] Initializing Coyote HTTP/1.1 on http-0.0.0.0-8080
+21:41:04,859 INFO  [Catalina] Initialization processed in 297 ms
+21:41:04,859 INFO  [StandardService] Starting service jboss.web
+21:41:04,859 INFO  [StandardEngine] Starting Servlet Engine: Apache Tomcat/5.5
+21:41:04,906 INFO  [StandardHost] XML validation disabled
+21:41:04,937 INFO  [Catalina] Server startup in 78 ms
+21:41:05,218 INFO  [TomcatDeployer] deploy, ctxPath=/invoker, warUrl=.../deploy/http-invoker.sar/invoker.war/
+21:41:05,484 INFO  [WebappLoader] Dual registration of jndi stream handler: factory already defined
+21:41:05,968 INFO  [TomcatDeployer] deploy, ctxPath=/ws4ee, warUrl=.../tmp/deploy/tmp53856jboss-ws4ee-exp.war/
+21:41:06,093 INFO  [TomcatDeployer] deploy, ctxPath=/, warUrl=.../deploy/jbossweb-tomcat55.sar/ROOT.war/
+21:41:06,312 INFO  [TomcatDeployer] deploy, ctxPath=/jbossmq-httpil, warUrl=.../deploy/jms/jbossmq-httpil.sar/jbossmq-httpil.war/
+21:41:08,890 INFO  [TomcatDeployer] deploy, ctxPath=/web-console, warUrl=.../deploy/management/console-mgr.sar/web-console.war/
+21:41:09,593 INFO  [MailService] Mail Service bound to java:/Mail
+21:41:10,453 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-local-jdbc.rar
+21:41:10,984 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-xa-jdbc.rar
+21:41:11,281 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-local-jdbc.rar
+21:41:11,500 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-xa-jdbc.rar
+21:41:11,796 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jms/jms-ra.rar
+21:41:12,218 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/mail-ra.rar
+21:41:13,406 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=DefaultDS' to JNDI name 'java:DefaultDS'
+21:41:13,937 INFO  [A] Bound to JNDI name: queue/A
+21:41:13,937 INFO  [B] Bound to JNDI name: queue/B
+21:41:13,937 INFO  [C] Bound to JNDI name: queue/C
+21:41:13,937 INFO  [D] Bound to JNDI name: queue/D
+21:41:13,937 INFO  [ex] Bound to JNDI name: queue/ex
+21:41:13,968 INFO  [testTopic] Bound to JNDI name: topic/testTopic
+21:41:13,968 INFO  [securedTopic] Bound to JNDI name: topic/securedTopic
+21:41:13,968 INFO  [testDurableTopic] Bound to JNDI name: topic/testDurableTopic
+21:41:13,968 INFO  [testQueue] Bound to JNDI name: queue/testQueue
+21:41:14,015 INFO  [UILServerILService] JBossMQ UIL service available at : /0.0.0.0:8093
+21:41:14,125 INFO  [DLQ] Bound to JNDI name: queue/DLQ
+21:41:14,312 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=ConnectionFactoryBinding,name=JmsXA' to JNDI name 'java:JmsXA'
+21:41:14,437 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=MySqlDS' to JNDI name 'java:MySqlDS'
+21:41:14,609 INFO  [TomcatDeployer] deploy, ctxPath=/helloworld, warUrl=.../tmp/deploy/tmp53911helloworld-exp.war/
+21:41:14,921 INFO  [TomcatDeployer] deploy, ctxPath=/jmx-console, warUrl=.../deploy/jmx-console.war/
+21:41:24,781 INFO  [TomcatDeployer] deploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp53912libra-exp.war/
+21:41:25,046 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+21:41:25,046 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+21:41:25,312 INFO  [PropertyMessageResources] Initializing, config='com.libra.messages.Libra', returnNull=true
+21:41:25,343 FATAL [TilesPlugin] TilesPlugin : Specified RequestProcessor not compatible with TilesRequestProcessor
+21:41:25,343 ERROR [[/libra]] Servlet /libra threw load() exception
+javax.servlet.ServletException: TilesPlugin : Specified RequestProcessor not compatible with TilesRequestProcessor
+	at org.apache.struts.tiles.TilesPlugin.initRequestProcessorClass(TilesPlugin.java:360)
+	at org.apache.struts.tiles.TilesPlugin.init(TilesPlugin.java:164)
+	at org.apache.struts.action.ActionServlet.initModulePlugIns(ActionServlet.java:1158)
+	at org.apache.struts.action.ActionServlet.init(ActionServlet.java:473)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:211)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1091)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:925)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:3857)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4118)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:759)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:739)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:524)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.commons.modeler.BaseModelMBean.invoke(BaseModelMBean.java:503)
+	at org.jboss.mx.server.RawDynamicInvoker.invoke(RawDynamicInvoker.java:150)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.apache.catalina.core.StandardContext.init(StandardContext.java:5005)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.commons.modeler.BaseModelMBean.invoke(BaseModelMBean.java:503)
+	at org.jboss.mx.server.RawDynamicInvoker.invoke(RawDynamicInvoker.java:150)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.web.tomcat.tc5.TomcatDeployer.performDeployInternal(TomcatDeployer.java:280)
+	at org.jboss.web.tomcat.tc5.TomcatDeployer.performDeploy(TomcatDeployer.java:88)
+	at org.jboss.web.AbstractWebDeployer.start(AbstractWebDeployer.java:357)
+	at org.jboss.web.WebModule.startModule(WebModule.java:68)
+	at org.jboss.web.WebModule.startService(WebModule.java:46)
+	at org.jboss.system.ServiceMBeanSupport.jbossInternalStart(ServiceMBeanSupport.java:274)
+	at org.jboss.system.ServiceMBeanSupport.jbossInternalLifecycle(ServiceMBeanSupport.java:230)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:72)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.system.ServiceController$ServiceProxy.invoke(ServiceController.java:943)
+	at $Proxy0.start(Unknown Source)
+	at org.jboss.system.ServiceController.start(ServiceController.java:428)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:72)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.mx.util.MBeanProxyExt.invoke(MBeanProxyExt.java:176)
+	at $Proxy30.start(Unknown Source)
+	at org.jboss.web.AbstractWebContainer.start(AbstractWebContainer.java:400)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.interceptor.AbstractInterceptor.invoke(AbstractInterceptor.java:118)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.interceptor.ModelMBeanOperationInterceptor.invoke(ModelMBeanOperationInterceptor.java:127)
+	at org.jboss.mx.interceptor.DynamicInterceptor.invoke(DynamicInterceptor.java:80)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.mx.util.MBeanProxyExt.invoke(MBeanProxyExt.java:176)
+	at $Proxy31.start(Unknown Source)
+	at org.jboss.deployment.MainDeployer.start(MainDeployer.java:989)
+	at org.jboss.deployment.MainDeployer.deploy(MainDeployer.java:790)
+	at org.jboss.deployment.MainDeployer.deploy(MainDeployer.java:753)
+	at sun.reflect.GeneratedMethodAccessor49.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.interceptor.AbstractInterceptor.invoke(AbstractInterceptor.java:118)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.interceptor.ModelMBeanOperationInterceptor.invoke(ModelMBeanOperationInterceptor.java:127)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.mx.util.MBeanProxyExt.invoke(MBeanProxyExt.java:176)
+	at $Proxy9.deploy(Unknown Source)
+	at org.jboss.deployment.scanner.URLDeploymentScanner.deploy(URLDeploymentScanner.java:319)
+	at org.jboss.deployment.scanner.URLDeploymentScanner.scan(URLDeploymentScanner.java:507)
+	at org.jboss.deployment.scanner.AbstractDeploymentScanner$ScannerThread.doScan(AbstractDeploymentScanner.java:192)
+	at org.jboss.deployment.scanner.AbstractDeploymentScanner.startService(AbstractDeploymentScanner.java:265)
+	at org.jboss.system.ServiceMBeanSupport.jbossInternalStart(ServiceMBeanSupport.java:274)
+	at org.jboss.system.ServiceMBeanSupport.jbossInternalLifecycle(ServiceMBeanSupport.java:230)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:72)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.system.ServiceController$ServiceProxy.invoke(ServiceController.java:943)
+	at $Proxy0.start(Unknown Source)
+	at org.jboss.system.ServiceController.start(ServiceController.java:428)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:72)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.mx.util.MBeanProxyExt.invoke(MBeanProxyExt.java:176)
+	at $Proxy4.start(Unknown Source)
+	at org.jboss.deployment.SARDeployer.start(SARDeployer.java:285)
+	at org.jboss.deployment.MainDeployer.start(MainDeployer.java:989)
+	at org.jboss.deployment.MainDeployer.deploy(MainDeployer.java:790)
+	at org.jboss.deployment.MainDeployer.deploy(MainDeployer.java:753)
+	at org.jboss.deployment.MainDeployer.deploy(MainDeployer.java:737)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.jboss.mx.interceptor.ReflectedDispatcher.invoke(ReflectedDispatcher.java:141)
+	at org.jboss.mx.server.Invocation.dispatch(Invocation.java:80)
+	at org.jboss.mx.interceptor.AbstractInterceptor.invoke(AbstractInterceptor.java:118)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.interceptor.ModelMBeanOperationInterceptor.invoke(ModelMBeanOperationInterceptor.java:127)
+	at org.jboss.mx.server.Invocation.invoke(Invocation.java:74)
+	at org.jboss.mx.server.AbstractMBeanInvoker.invoke(AbstractMBeanInvoker.java:245)
+	at org.jboss.mx.server.MBeanServerImpl.invoke(MBeanServerImpl.java:644)
+	at org.jboss.mx.util.MBeanProxyExt.invoke(MBeanProxyExt.java:176)
+	at $Proxy5.deploy(Unknown Source)
+	at org.jboss.system.server.ServerImpl.doStart(ServerImpl.java:453)
+	at org.jboss.system.server.ServerImpl.start(ServerImpl.java:330)
+	at org.jboss.Main.boot(Main.java:187)
+	at org.jboss.Main$1.run(Main.java:438)
+	at java.lang.Thread.run(Thread.java:595)
+21:41:27,562 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+21:41:29,828 INFO  [EjbModule] Deploying AddUserBean
+21:41:29,984 INFO  [EjbModule] Deploying LoginBean
+21:41:30,046 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'AddUserBean' to jndi 'AddUserBean'
+21:41:30,062 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'LoginBean' to jndi 'LoginBean'
+21:41:30,062 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53913Ediary.ear-contents/EdiaryEJB.jar
+21:41:30,093 INFO  [TomcatDeployer] deploy, ctxPath=/ediary, warUrl=.../tmp/deploy/tmp53913Ediary.ear-contents/EdiaryWeb-exp.war/
+21:41:30,250 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+21:41:30,250 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+21:41:30,421 INFO  [PropertyMessageResources] Initializing, config='ediary.struts.Application', returnNull=true
+21:41:30,453 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+21:41:30,546 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+21:41:30,671 INFO  [EjbModule] Deploying Hello
+21:41:30,687 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Hello' to jndi 'Hello'
+21:41:30,687 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53914HelloEJB.ear-contents/HelloEJB.jar
+21:41:30,703 INFO  [TomcatDeployer] deploy, ctxPath=/HelloEJB, warUrl=.../tmp/deploy/tmp53914HelloEJB.ear-contents/HelloEJB-exp.war/
+21:41:30,890 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+21:41:30,906 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+21:41:31,062 INFO  [EjbModule] Deploying Employee
+21:41:31,343 INFO  [ProxyFactory] Bound EJB Home 'Employee' to jndi 'ejb/com/example/cmp/Employee'
+21:41:33,703 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53915employeecmp.ear-contents/employeecmp-ejb.jar
+21:41:33,734 INFO  [TomcatDeployer] deploy, ctxPath=/employeecmp, warUrl=.../tmp/deploy/tmp53915employeecmp.ear-contents/employeecmp-exp.war/
+21:41:33,828 INFO  [ContextConfig] Missing application web.xml, using defaults only StandardEngine[jboss.web].StandardHost[localhost].StandardContext[/employeecmp]
+21:41:33,843 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+21:41:33,859 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+21:41:33,968 INFO  [EjbModule] Deploying Author
+21:41:33,984 INFO  [EjbModule] Deploying Story
+21:41:34,031 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Author' to jndi 'ejb/JBlog/AuthorLocal'
+21:41:34,031 INFO  [ProxyFactory] Bound EJB Home 'Author' to jndi 'ejb/JBlog/Author'
+21:41:34,125 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Story' to jndi 'ejb/JBlog/StoryLocal'
+21:41:34,125 INFO  [ProxyFactory] Bound EJB Home 'Story' to jndi 'ejb/JBlog/Story'
+21:41:34,328 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53916jblog.ear-contents/jblog-ejb.jar
+21:41:34,375 INFO  [TomcatDeployer] deploy, ctxPath=/jblog, warUrl=.../tmp/deploy/tmp53916jblog.ear-contents/jblog-exp.war/
+21:41:34,468 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+21:41:34,859 INFO  [Http11Protocol] Starting Coyote HTTP/1.1 on http-0.0.0.0-8080
+21:41:35,093 INFO  [ChannelSocket] JK: ajp13 listening on /0.0.0.0:8009
+21:41:35,562 INFO  [JkMain] Jk running ID=0 time=0/531  config=null
+21:41:35,562 INFO  [Server] JBoss (MX MicroKernel) [4.0.3SP1 (build: CVSTag=JBoss_4_0_3_SP1 date=200510231054)] Started in 39s:125ms
+21:44:03,531 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:03,531 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:03,531 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+21:44:12,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:12,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:12,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:12,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:12,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+21:44:27,109 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+21:44:27,156 INFO  [PropertyMessageResources] Initializing, config='com.libra.messages.Libra', returnNull=true
+21:44:27,171 FATAL [TilesPlugin] TilesPlugin : Specified RequestProcessor not compatible with TilesRequestProcessor
+21:44:27,171 ERROR [[action]] Allocate exception for servlet action
+javax.servlet.ServletException: TilesPlugin : Specified RequestProcessor not compatible with TilesRequestProcessor
+	at org.apache.struts.tiles.TilesPlugin.initRequestProcessorClass(TilesPlugin.java:360)
+	at org.apache.struts.tiles.TilesPlugin.init(TilesPlugin.java:164)
+	at org.apache.struts.action.ActionServlet.initModulePlugIns(ActionServlet.java:1158)
+	at org.apache.struts.action.ActionServlet.init(ActionServlet.java:473)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:211)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1091)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:750)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:130)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:178)
+	at org.jboss.web.tomcat.security.CustomPrincipalValve.invoke(CustomPrincipalValve.java:39)
+	at org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(SecurityAssociationValve.java:159)
+	at org.jboss.web.tomcat.security.JaccContextValve.invoke(JaccContextValve.java:59)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:126)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:107)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:148)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:856)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:744)
+	at org.apache.tomcat.util.net.PoolTcpEndpoint.processSocket(PoolTcpEndpoint.java:527)
+	at org.apache.tomcat.util.net.MasterSlaveWorkerThread.run(MasterSlaveWorkerThread.java:112)
+	at java.lang.Thread.run(Thread.java:595)
+21:45:41,109 INFO  [Server] Runtime shutdown hook called, forceHalt: true
+21:45:41,109 INFO  [Server] JBoss SHUTDOWN: Undeploying all packages
+21:45:41,109 INFO  [TomcatDeployer] undeploy, ctxPath=/jblog, warUrl=.../tmp/deploy/tmp53916jblog.ear-contents/jblog-exp.war/
+21:45:41,390 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53916jblog.ear-contents/jblog-ejb.jar
+21:45:41,390 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Story' from jndi 'ejb/JBlog/StoryLocal'
+21:45:41,406 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Author' from jndi 'ejb/JBlog/AuthorLocal'
+21:45:41,421 INFO  [ProxyFactory] Unbind EJB Home 'Story' from jndi 'ejb/JBlog/Story'
+21:45:41,437 INFO  [EjbModule] Undeployed Story
+21:45:41,437 INFO  [ProxyFactory] Unbind EJB Home 'Author' from jndi 'ejb/JBlog/Author'
+21:45:41,437 INFO  [EjbModule] Undeployed Author
+21:45:41,437 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+21:45:41,437 INFO  [TomcatDeployer] undeploy, ctxPath=/employeecmp, warUrl=.../tmp/deploy/tmp53915employeecmp.ear-contents/employeecmp-exp.war/
+21:45:41,468 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53915employeecmp.ear-contents/employeecmp-ejb.jar
+21:45:41,531 INFO  [ProxyFactory] Unbind EJB Home 'Employee' from jndi 'ejb/com/example/cmp/Employee'
+21:45:41,531 INFO  [EjbModule] Undeployed Employee
+21:45:41,546 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+21:45:41,546 INFO  [TomcatDeployer] undeploy, ctxPath=/HelloEJB, warUrl=.../tmp/deploy/tmp53914HelloEJB.ear-contents/HelloEJB-exp.war/
+21:45:41,562 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53914HelloEJB.ear-contents/HelloEJB.jar
+21:45:41,562 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Hello' from jndi 'Hello'
+21:45:41,656 INFO  [EjbModule] Undeployed Hello
+21:45:41,671 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+21:45:41,671 INFO  [TomcatDeployer] undeploy, ctxPath=/ediary, warUrl=.../tmp/deploy/tmp53913Ediary.ear-contents/EdiaryWeb-exp.war/
+21:45:41,937 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp53913Ediary.ear-contents/EdiaryEJB.jar
+21:45:41,937 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'LoginBean' from jndi 'LoginBean'
+21:45:41,953 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'AddUserBean' from jndi 'AddUserBean'
+21:45:42,640 INFO  [EjbModule] Undeployed LoginBean
+21:45:42,671 INFO  [EjbModule] Undeployed AddUserBean
+21:45:42,687 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+21:45:42,687 INFO  [TomcatDeployer] undeploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp53912libra-exp.war/
+21:45:43,625 INFO  [TomcatDeployer] undeploy, ctxPath=/jmx-console, warUrl=.../deploy/jmx-console.war/
+21:45:43,750 INFO  [TomcatDeployer] undeploy, ctxPath=/helloworld, warUrl=.../tmp/deploy/tmp53911helloworld-exp.war/
+21:45:43,921 INFO  [ConnectionFactoryBindingService] Unbound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=MySqlDS' from JNDI name 'java:MySqlDS'
+21:45:44,250 INFO  [ConnectionFactoryBindingService] Unbound ConnectionManager 'jboss.jca:service=ConnectionFactoryBinding,name=JmsXA' from JNDI name 'java:JmsXA'
+21:45:44,328 INFO  [testTopic] Unbinding JNDI name: topic/testTopic
+21:45:44,328 INFO  [securedTopic] Unbinding JNDI name: topic/securedTopic
+21:45:44,343 INFO  [testDurableTopic] Unbinding JNDI name: topic/testDurableTopic
+21:45:44,343 INFO  [testQueue] Unbinding JNDI name: queue/testQueue
+21:45:44,484 INFO  [A] Unbinding JNDI name: queue/A
+21:45:44,484 INFO  [B] Unbinding JNDI name: queue/B
+21:45:44,484 INFO  [C] Unbinding JNDI name: queue/C
+21:45:44,484 INFO  [D] Unbinding JNDI name: queue/D
+21:45:44,484 INFO  [ex] Unbinding JNDI name: queue/ex
+21:45:44,609 INFO  [DLQ] Unbinding JNDI name: queue/DLQ
+21:45:44,687 INFO  [ConnectionFactoryBindingService] Unbound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=DefaultDS' from JNDI name 'java:DefaultDS'
+21:45:46,453 INFO  [HypersonicDatabase] Database standalone closed clean
+21:45:46,500 INFO  [MailService] Mail service 'java:/Mail' removed from JNDI
+21:45:46,500 INFO  [TomcatDeployer] undeploy, ctxPath=/web-console, warUrl=.../deploy/management/console-mgr.sar/web-console.war/
+21:45:46,765 INFO  [TomcatDeployer] undeploy, ctxPath=/jbossmq-httpil, warUrl=.../deploy/jms/jbossmq-httpil.sar/jbossmq-httpil.war/
+21:45:46,968 INFO  [TomcatDeployer] undeploy, ctxPath=/, warUrl=.../deploy/jbossweb-tomcat55.sar/ROOT.war/
+21:45:47,265 INFO  [Http11Protocol] Pausing Coyote HTTP/1.1 on http-0.0.0.0%2F0.0.0.0-8080
+21:45:48,265 INFO  [StandardService] Stopping service jboss.web
+21:45:48,390 INFO  [Http11Protocol] Stopping Coyote HTTP/1.1 on http-0.0.0.0%2F0.0.0.0-8080
+21:45:48,406 INFO  [TomcatDeployer] undeploy, ctxPath=/invoker, warUrl=.../deploy/http-invoker.sar/invoker.war/
+21:45:48,406 INFO  [TomcatDeployer] undeploy, ctxPath=/ws4ee, warUrl=.../tmp/deploy/tmp53856jboss-ws4ee-exp.war/
+Shutting down
+21:45:49,156 INFO  [Server] Shutdown complete
+Shutdown complete
+Halting VM
+Terminate batch job (Y/N)? 

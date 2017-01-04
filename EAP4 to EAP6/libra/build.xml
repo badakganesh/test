@@ -1,0 +1,152 @@
+
+<!-- 
+  - Author  : Manivannan Palanichamy (manivannan.p@gmail.com)
+  - Date    : 17th May 2005
+  - Version : 1.0
+  - Licence : General Public License (GPL)
+  - Desc    : This build.xml contains set of targets that  compile, copy,
+		   move the source files, resource files used in the porject, pack 
+               them into archieves and deploy into the server
+  -->
+
+
+<project name="libra" default="display-warning">
+
+<!-- Setting the server deployments directories  from environment variables. -->
+   <property environment="env"/>
+   
+   <property name="jboss.home"       value="${env.JBOSS_HOME}"/>
+   <property name="jboss.server.dir" value="${jboss.home}/server/default"/>
+   <property name="jboss.deploy.dir" value="${jboss.server.dir}/deploy"/>
+
+   
+<!-- Setting the web-src dir, ejb-src dir and ejb-jar, war, ear names -->
+
+<!-- web module's struts action,forms .java file sources -->
+
+      <property name="web.src.dir" value="src/web/WEB-INF/src"/>
+
+      <property name="web.classes.dir" value="src/web/WEB-INF/classes"/>
+	<property name="app.war.name" value="libra.war"/>
+	<property name="app.ejb.name" value="libra-ejb.jar"/>
+	<property name="app.ear.name" value="libra.ear"/>
+
+<!-- ejb modules war, src dir name etc-->
+	<property name="ejb.src.dir" value="src/ejb"/>
+	<property name="ejb.dest.dir" value="bin/ejb"/>
+	
+
+
+
+<!-- Setting the class path variable-->
+   <path id="libra.classpath">
+
+<!-- Including the Struts jars v 1.1 -->
+      <pathelement location="src/web/WEB-INF/lib/commons-beanutils.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/commons-collections.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/commons-digester.jar"/>	
+	<pathelement location="src/web/WEB-INF/lib/commons-fileupload.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/commons-lang.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/commons-logging.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/commons-validator.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/jakarta-oro.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/struts.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/jstl.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/standard.jar"/>
+	<pathelement location="src/web/WEB-INF/lib/struts-legacy.jar"/>
+	<pathelement location="${jboss.home}/server/all/lib/javax.servlet.jar"/>
+	<pathelement location="${jboss.home}/server/all/lib/javax.servlet.jsp.jar"/>
+	<pathelement location="${jboss.home}/server/default/lib/mysql-connector-java-3.1.12-bin.jar"/>	
+
+<!-- EJB/Jboss/J2ee Specific jars -->
+      <pathelement location="${jboss.home}\server\all\lib\jboss-j2ee.jar"/>  
+
+<!-- Including the Libra's ejb jar -->
+      <pathelement location="bin/ear/libra-ejb.jar"/>  	
+
+   </path>
+
+<!-- This is just a warning task -->
+<target name="display-warning">
+<echo>Warning: Choose a specific task.Example, "ant deploy-war" (or) "ant deploy-ear"</echo>
+</target>
+
+<!-- This target copies the compiled web application modules into bin/web directory-->
+	<target name="copy-web" description="copying src/web/* to bin/web/">
+      	<copy todir="bin/web">
+			<fileset dir="src/web"/>
+		</copy>
+
+<!-- Copying the message resource files -->
+
+		<copy todir="bin/web/WEB-INF/classes/com/libra/messages">
+			<fileset dir="src/web/WEB-INF/src/struts/com/libra/messages"/>
+		</copy>
+
+
+	</target>
+
+<!-- This is the target to compile all the src file of web-module. src/* -->
+
+	<target name="compile-web">
+		<javac srcdir="${web.src.dir}" destdir="${web.classes.dir}"  classpathref="libra.classpath" debug="yes"/>
+	</target>
+
+<!--- This target packs the web modules  -->
+	 <target name="war">
+       	<jar jarfile="bin/ear/${app.war.name}">
+  	         <fileset dir="bin/web">
+      	      <include name="**"/>
+        	   </fileset>
+      	</jar>
+   	</target>
+
+
+<!-- This is the target to compile all the ejb classes/interfaces of  -->
+
+	<target name="compile-ejb">
+		<javac srcdir="${ejb.src.dir}" destdir="${ejb.dest.dir}"  classpathref="libra.classpath" debug="yes"/>
+<!-- Also, copying the META-INF dir of ejb-->
+		<copy todir="bin/ejb/META-INF">
+			<fileset dir="src/ejb/META-INF"/>
+		</copy>
+		
+	</target>
+
+
+<!--- This target packs the ejb modules into .jars  -->
+	 <target name="ejb-jar">
+       	<jar jarfile="bin/ear/${app.ejb.name}">
+  	         <fileset dir="bin/ejb">
+      	      <include name="**"/>
+        	   </fileset>
+      	</jar>
+   	</target>
+
+<!-- Hurrah! now earring!! -->
+
+	 <target name="ear">
+<!-- Deleting the ear first-->
+	<delete file="bin/ear/libra.ear"/>
+       	<jar jarfile="bin/ear/${app.ear.name}">
+  	         <fileset dir="bin/ear">
+      	      <include name="**"/>
+        	   </fileset>
+      	</jar>
+   	</target>
+
+	
+
+<!-- This is target to deploy the libra.war alone.-->
+	<target name="deploy-war" depends="compile-ejb, ejb-jar, compile-web, copy-web, war">
+		<copy file="bin/ear/${app.war.name}" todir="${jboss.deploy.dir}"/>
+	</target>
+
+<!-- This is target to deploy the complete application (libra.ear)-->
+	<target name="deploy-ear" depends="compile-ejb, ejb-jar, compile-web, copy-web, war, ear">
+		<copy file="bin/ear/${app.ear.name}" todir="${jboss.deploy.dir}"/>
+	</target>
+
+
+
+</project>

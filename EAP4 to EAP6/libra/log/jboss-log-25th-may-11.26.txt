@@ -1,0 +1,209 @@
+===============================================================================
+.
+  JBoss Bootstrap Environment
+.
+  JBOSS_HOME: D:\Java\jboss-4.0.3SP1\bin\\..
+.
+  JAVA: C:\Program Files\Java\jdk1.5.0_03\bin\java
+.
+  JAVA_OPTS:  -Dprogram.name=run.bat -Xms128m -Xmx512m
+.
+  CLASSPATH: C:\Program Files\Java\jdk1.5.0_03\lib\tools.jar;D:\Java\jboss-4.0.3SP1\bin\\run.jar
+.
+===============================================================================
+.
+23:29:36,218 INFO  [Server] Starting JBoss (MX MicroKernel)...
+23:29:36,218 INFO  [Server] Release ID: JBoss [Zion] 4.0.3SP1 (build: CVSTag=JBoss_4_0_3_SP1 date=200510231054)
+23:29:36,234 INFO  [Server] Home Dir: D:\Java\jboss-4.0.3SP1
+23:29:36,234 INFO  [Server] Home URL: file:/D:/Java/jboss-4.0.3SP1/
+23:29:36,234 INFO  [Server] Patch URL: null
+23:29:36,234 INFO  [Server] Server Name: default
+23:29:36,234 INFO  [Server] Server Home Dir: D:\Java\jboss-4.0.3SP1\server\default
+23:29:36,234 INFO  [Server] Server Home URL: file:/D:/Java/jboss-4.0.3SP1/server/default/
+23:29:36,234 INFO  [Server] Server Temp Dir: D:\Java\jboss-4.0.3SP1\server\default\tmp
+23:29:36,234 INFO  [Server] Root Deployment Filename: jboss-service.xml
+23:29:36,546 INFO  [ServerInfo] Java version: 1.5.0_03,Sun Microsystems Inc.
+23:29:36,546 INFO  [ServerInfo] Java VM: Java HotSpot(TM) Client VM 1.5.0_03-b07,Sun Microsystems Inc.
+23:29:36,546 INFO  [ServerInfo] OS-System: Windows XP 5.1,x86
+23:29:37,109 INFO  [Server] Core system initialized
+23:29:39,796 INFO  [WebService] Using RMI server codebase: http://sun-network:8083/
+23:29:39,812 INFO  [Log4jService$URLWatchTimerTask] Configuring from URL: resource:log4j.xml
+23:29:40,609 INFO  [NamingService] Started jndi bootstrap jnpPort=1099, rmiPort=1098, backlog=50, bindAddress=/0.0.0.0, Client SocketFactory=null, Server SocketFactory=org.jboss.net.sockets.DefaultSocketFactory@ad093076
+23:29:50,296 INFO  [Embedded] Catalina naming disabled
+23:29:50,843 INFO  [Http11Protocol] Initializing Coyote HTTP/1.1 on http-0.0.0.0-8080
+23:29:50,859 INFO  [Catalina] Initialization processed in 516 ms
+23:29:50,859 INFO  [StandardService] Starting service jboss.web
+23:29:50,859 INFO  [StandardEngine] Starting Servlet Engine: Apache Tomcat/5.5
+23:29:50,906 INFO  [StandardHost] XML validation disabled
+23:29:50,953 INFO  [Catalina] Server startup in 94 ms
+23:29:51,406 INFO  [TomcatDeployer] deploy, ctxPath=/invoker, warUrl=.../deploy/http-invoker.sar/invoker.war/
+23:29:51,734 INFO  [WebappLoader] Dual registration of jndi stream handler: factory already defined
+23:29:52,390 INFO  [TomcatDeployer] deploy, ctxPath=/ws4ee, warUrl=.../tmp/deploy/tmp49443jboss-ws4ee-exp.war/
+23:29:52,593 INFO  [TomcatDeployer] deploy, ctxPath=/, warUrl=.../deploy/jbossweb-tomcat55.sar/ROOT.war/
+23:29:52,875 INFO  [TomcatDeployer] deploy, ctxPath=/jbossmq-httpil, warUrl=.../deploy/jms/jbossmq-httpil.sar/jbossmq-httpil.war/
+23:29:55,718 INFO  [TomcatDeployer] deploy, ctxPath=/web-console, warUrl=.../deploy/management/console-mgr.sar/web-console.war/
+23:29:58,093 INFO  [MailService] Mail Service bound to java:/Mail
+23:30:00,125 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-local-jdbc.rar
+23:30:00,421 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-ha-xa-jdbc.rar
+23:30:00,671 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-local-jdbc.rar
+23:30:00,875 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jboss-xa-jdbc.rar
+23:30:01,109 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/jms/jms-ra.rar
+23:30:01,265 INFO  [RARDeployment] Required license terms exist, view META-INF/ra.xml in .../deploy/mail-ra.rar
+23:30:04,984 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=DefaultDS' to JNDI name 'java:DefaultDS'
+23:30:05,281 INFO  [A] Bound to JNDI name: queue/A
+23:30:05,281 INFO  [B] Bound to JNDI name: queue/B
+23:30:05,281 INFO  [C] Bound to JNDI name: queue/C
+23:30:05,281 INFO  [D] Bound to JNDI name: queue/D
+23:30:05,281 INFO  [ex] Bound to JNDI name: queue/ex
+23:30:05,296 INFO  [testTopic] Bound to JNDI name: topic/testTopic
+23:30:05,312 INFO  [securedTopic] Bound to JNDI name: topic/securedTopic
+23:30:05,312 INFO  [testDurableTopic] Bound to JNDI name: topic/testDurableTopic
+23:30:05,312 INFO  [testQueue] Bound to JNDI name: queue/testQueue
+23:30:05,421 INFO  [UILServerILService] JBossMQ UIL service available at : /0.0.0.0:8093
+23:30:05,562 INFO  [DLQ] Bound to JNDI name: queue/DLQ
+23:30:05,890 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=ConnectionFactoryBinding,name=JmsXA' to JNDI name 'java:JmsXA'
+23:30:06,031 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=MySqlDS' to JNDI name 'java:MySqlDS'
+23:30:06,140 INFO  [TomcatDeployer] deploy, ctxPath=/helloworld, warUrl=.../tmp/deploy/tmp49498helloworld-exp.war/
+23:30:06,375 INFO  [TomcatDeployer] deploy, ctxPath=/jmx-console, warUrl=.../deploy/jmx-console.war/
+23:30:08,031 INFO  [TomcatDeployer] deploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49499libra-exp.war/
+23:30:08,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:30:08,328 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+23:30:08,578 INFO  [PropertyMessageResources] Initializing, config='com.libra.messages.Libra', returnNull=true
+23:30:08,671 INFO  [TilesPlugin] Tiles definition factory loaded for module ''.
+23:30:09,031 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+23:30:12,375 INFO  [EjbModule] Deploying AddUserBean
+23:30:12,640 INFO  [EjbModule] Deploying LoginBean
+23:30:12,828 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'AddUserBean' to jndi 'AddUserBean'
+23:30:12,828 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'LoginBean' to jndi 'LoginBean'
+23:30:12,828 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49500Ediary.ear-contents/EdiaryEJB.jar
+23:30:12,890 INFO  [TomcatDeployer] deploy, ctxPath=/ediary, warUrl=.../tmp/deploy/tmp49500Ediary.ear-contents/EdiaryWeb-exp.war/
+23:30:13,171 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:30:13,171 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+23:30:13,453 INFO  [PropertyMessageResources] Initializing, config='ediary.struts.Application', returnNull=true
+23:30:13,500 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+23:30:13,531 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+23:30:13,703 INFO  [EjbModule] Deploying Hello
+23:30:13,734 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Hello' to jndi 'Hello'
+23:30:13,734 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49501HelloEJB.ear-contents/HelloEJB.jar
+23:30:13,750 INFO  [TomcatDeployer] deploy, ctxPath=/HelloEJB, warUrl=.../tmp/deploy/tmp49501HelloEJB.ear-contents/HelloEJB-exp.war/
+23:30:13,843 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+23:30:13,859 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+23:30:14,171 INFO  [EjbModule] Deploying Employee
+23:30:14,437 INFO  [ProxyFactory] Bound EJB Home 'Employee' to jndi 'ejb/com/example/cmp/Employee'
+23:30:16,812 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49502employeecmp.ear-contents/employeecmp-ejb.jar
+23:30:16,843 INFO  [TomcatDeployer] deploy, ctxPath=/employeecmp, warUrl=.../tmp/deploy/tmp49502employeecmp.ear-contents/employeecmp-exp.war/
+23:30:16,921 INFO  [ContextConfig] Missing application web.xml, using defaults only StandardEngine[jboss.web].StandardHost[localhost].StandardContext[/employeecmp]
+23:30:16,968 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+23:30:16,968 INFO  [EARDeployer] Init J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+23:30:17,109 INFO  [EjbModule] Deploying Author
+23:30:17,109 INFO  [EjbModule] Deploying Story
+23:30:17,187 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Author' to jndi 'ejb/JBlog/AuthorLocal'
+23:30:17,187 INFO  [ProxyFactory] Bound EJB Home 'Author' to jndi 'ejb/JBlog/Author'
+23:30:17,265 INFO  [BaseLocalProxyFactory] Bound EJB LocalHome 'Story' to jndi 'ejb/JBlog/StoryLocal'
+23:30:17,281 INFO  [ProxyFactory] Bound EJB Home 'Story' to jndi 'ejb/JBlog/Story'
+23:30:17,390 INFO  [EJBDeployer] Deployed: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49503jblog.ear-contents/jblog-ejb.jar
+23:30:17,437 INFO  [TomcatDeployer] deploy, ctxPath=/jblog, warUrl=.../tmp/deploy/tmp49503jblog.ear-contents/jblog-exp.war/
+23:30:17,562 INFO  [EARDeployer] Started J2EE application: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+23:30:17,875 INFO  [Http11Protocol] Starting Coyote HTTP/1.1 on http-0.0.0.0-8080
+23:30:18,406 INFO  [ChannelSocket] JK: ajp13 listening on /0.0.0.0:8009
+23:30:18,421 INFO  [JkMain] Jk running ID=0 time=0/468  config=null
+23:30:18,421 INFO  [Server] JBoss (MX MicroKernel) [4.0.3SP1 (build: CVSTag=JBoss_4_0_3_SP1 date=200510231054)] Started in 42s:187ms
+23:30:58,578 INFO  [TilesRequestProcessor] Tiles definition factory found for request processor ''.
+23:30:58,640 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:30:58,671 INFO  [STDOUT] libra-testing: login/welcome requested
+23:31:13,781 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:31:13,781 INFO  [STDOUT] libra-testing: login/welcome requested
+23:31:17,062 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:31:17,062 INFO  [STDOUT] libra-testing: login/welcome requested
+23:33:13,718 INFO  [TomcatDeployer] undeploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49499libra-exp.war/
+23:33:16,312 INFO  [TomcatDeployer] deploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49504libra-exp.war/
+23:33:17,437 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:33:17,437 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+23:33:17,796 INFO  [PropertyMessageResources] Initializing, config='com.libra.messages.Libra', returnNull=true
+23:33:17,890 INFO  [TilesPlugin] Tiles definition factory loaded for module ''.
+23:33:54,500 INFO  [TilesRequestProcessor] Tiles definition factory found for request processor ''.
+23:33:54,500 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:33:54,500 INFO  [STDOUT] libra-testing: login/welcome requested
+23:33:54,765 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:33:54,765 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:33:54,765 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:34:03,437 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:34:03,437 INFO  [STDOUT] libra-testing: login/welcome requested
+23:34:04,781 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:34:04,781 INFO  [STDOUT] libra-testing: login/welcome requested
+23:34:04,937 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:34:04,937 INFO  [STDOUT] libra-testing: login/welcome requested
+23:34:08,062 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:34:08,062 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:34:08,078 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:34:08,093 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:34:08,093 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:34:32,312 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:34:32,312 INFO  [STDOUT] libra-testing: login/welcome requested
+23:35:54,390 INFO  [STDOUT] libra-testing: login/welcome requested
+23:36:00,281 INFO  [STDOUT] libra-testing: session is set; so, go ahead
+23:36:03,937 INFO  [TomcatDeployer] undeploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49504libra-exp.war/
+23:36:07,312 INFO  [TomcatDeployer] deploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49505libra-exp.war/
+23:36:08,250 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:36:08,250 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.action.ActionResources', returnNull=true
+23:36:08,468 INFO  [PropertyMessageResources] Initializing, config='com.libra.messages.Libra', returnNull=true
+23:36:08,546 INFO  [TilesPlugin] Tiles definition factory loaded for module ''.
+23:36:11,250 INFO  [TilesRequestProcessor] Tiles definition factory found for request processor ''.
+23:36:11,250 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:36:11,250 INFO  [STDOUT] libra-testing: login/welcome requested
+23:36:11,359 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:11,359 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:11,375 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true
+23:36:20,843 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:36:20,843 INFO  [STDOUT] libra-testing: login/welcome requested
+23:36:22,640 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:22,640 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:22,656 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:22,671 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:22,671 INFO  [PropertyMessageResources] Initializing, config='org.apache.struts.taglib.html.LocalStrings', returnNull=true
+23:36:34,781 INFO  [STDOUT] libra-testing: redirecting to /welcome 
+23:36:34,781 INFO  [STDOUT] libra-testing: login/welcome requested
+23:36:42,906 INFO  [STDOUT] libra-testing: login/welcome requested
+23:47:37,906 INFO  [STDOUT] libra-testing: login/welcome requested
+00:17:52,640 INFO  [Server] Runtime shutdown hook called, forceHalt: true
+00:17:52,656 INFO  [Server] JBoss SHUTDOWN: Undeploying all packages
+00:17:52,718 INFO  [TomcatDeployer] undeploy, ctxPath=/libra, warUrl=.../tmp/deploy/tmp49505libra-exp.war/
+00:17:54,281 INFO  [TomcatDeployer] undeploy, ctxPath=/jblog, warUrl=.../tmp/deploy/tmp49503jblog.ear-contents/jblog-exp.war/
+00:17:54,312 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49503jblog.ear-contents/jblog-ejb.jar
+00:17:54,312 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Story' from jndi 'ejb/JBlog/StoryLocal'
+00:17:54,468 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Author' from jndi 'ejb/JBlog/AuthorLocal'
+00:17:54,500 INFO  [ProxyFactory] Unbind EJB Home 'Story' from jndi 'ejb/JBlog/Story'
+00:17:54,515 INFO  [EjbModule] Undeployed Story
+00:17:54,515 INFO  [ProxyFactory] Unbind EJB Home 'Author' from jndi 'ejb/JBlog/Author'
+00:17:54,515 INFO  [EjbModule] Undeployed Author
+00:17:54,515 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/jblog.ear
+00:17:54,515 INFO  [TomcatDeployer] undeploy, ctxPath=/employeecmp, warUrl=.../tmp/deploy/tmp49502employeecmp.ear-contents/employeecmp-exp.war/
+00:17:54,546 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49502employeecmp.ear-contents/employeecmp-ejb.jar
+00:17:54,593 INFO  [ProxyFactory] Unbind EJB Home 'Employee' from jndi 'ejb/com/example/cmp/Employee'
+00:17:54,609 INFO  [EjbModule] Undeployed Employee
+00:17:54,625 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/employeecmp.ear
+00:17:54,625 INFO  [TomcatDeployer] undeploy, ctxPath=/HelloEJB, warUrl=.../tmp/deploy/tmp49501HelloEJB.ear-contents/HelloEJB-exp.war/
+00:17:54,656 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49501HelloEJB.ear-contents/HelloEJB.jar
+00:17:54,671 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'Hello' from jndi 'Hello'
+00:17:54,750 INFO  [EjbModule] Undeployed Hello
+00:17:54,765 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/HelloEJB.ear
+00:17:54,765 INFO  [TomcatDeployer] undeploy, ctxPath=/ediary, warUrl=.../tmp/deploy/tmp49500Ediary.ear-contents/EdiaryWeb-exp.war/
+00:17:55,171 INFO  [EJBDeployer] Undeploying: file:/D:/Java/jboss-4.0.3SP1/server/default/tmp/deploy/tmp49500Ediary.ear-contents/EdiaryEJB.jar
+00:17:55,171 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'LoginBean' from jndi 'LoginBean'
+00:17:55,218 INFO  [BaseLocalProxyFactory] Unbind EJB LocalHome 'AddUserBean' from jndi 'AddUserBean'
+00:17:56,062 INFO  [EjbModule] Undeployed LoginBean
+00:17:56,062 INFO  [EjbModule] Undeployed AddUserBean
+00:17:56,078 INFO  [EARDeployer] Undeploying J2EE application, destroy step: file:/D:/Java/jboss-4.0.3SP1/server/default/deploy/Ediary.ear
+00:17:56,093 INFO  [TomcatDeployer] undeploy, ctxPath=/jmx-console, warUrl=.../deploy/jmx-console.war/
+00:17:56,156 INFO  [TomcatDeployer] undeploy, ctxPath=/helloworld, warUrl=.../tmp/deploy/tmp49498helloworld-exp.war/
+00:17:56,312 INFO  [ConnectionFactoryBindingService] Unbound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=MySqlDS' from JNDI name 'java:MySqlDS'
+00:17:56,515 INFO  [ConnectionFactoryBindingService] Unbound ConnectionManager 'jboss.jca:service=ConnectionFactoryBinding,name=JmsXA' from JNDI name 'java:JmsXA'
+00:17:56,625 INFO  [testTopic] Unbinding JNDI name: topic/testTopic
+00:17:56,625 INFO  [securedTopic] Unbinding JNDI name: topic/securedTopic
+00:17:56,625 INFO  [testDurableTopic] Unbinding JNDI name: topic/testDurableTopic
+00:17:56,625 INFO  [testQueue] Unbinding JNDI name: queue/testQueue
+00:17:56,750 INFO  [A] Unbinding JNDI name: queue/A
+00:17:56,750 INFO  [B] Unbinding JNDI name: queue/B
+00:17:56,750 INFO  [C] Unbinding JNDI name: queue/C
+00:17:56,750 INFO  [D] Unbinding JNDI name: queue/D
+00:17:56,750 INFO  [ex] Unbinding JNDI name: queue/ex

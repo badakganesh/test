@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 2.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web.dtd">
+
+<!-- 
+  - @(#)    : jboss-xml.xml
+  - Version : 1.0
+  - Author  : Manivannan Palanichamy (manivannan.p <at> gmail.com)
+  - Date    : 17th May 2005
+  - Licence : General Public License (GPL)
+  - Desc    : This file has jboss specific web resource information.
+  -   	  
+  -           
+  -->
+
+
+<jboss-web>
+
+
+   <!-- Resource references -->
+
+   <!-- EJB References -->
+  
+</jboss-web>
+

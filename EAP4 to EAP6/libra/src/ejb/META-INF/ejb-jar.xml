@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+
+<ejb-jar >
+
+   <description>Libra EJB modules</description>
+   <display-name>Libra EJB Modules</display-name>
+
+   <enterprise-beans>
+
+      <!-- Session Beans -->
+	<!-- This bean verifies the login-->
+
+      <session >
+	<!-- This bean is for new user account registration -->
+         <description>This LoginVerifier Bean verifies the login and password for Libra Book Store Application</description>
+
+         <ejb-name>LoginVerifierBean</ejb-name>
+
+         <local-home>business.ejb.login.LoginVerifierHome</local-home>
+         <local>business.ejb.login.LoginVerifierLocal</local>
+         <ejb-class>business.ejb.login.LoginVerifierBean</ejb-class>
+         <session-type>Stateless</session-type>
+         <transaction-type>Container</transaction-type>
+
+         <ejb-local-ref >
+            <ejb-ref-name>LoginVerifierBean</ejb-ref-name>
+            <ejb-ref-type>Session</ejb-ref-type>
+            <local-home>business.ejb.login.LoginVerifierHome</local-home>
+	      <local>business.ejb.login.LoginVerifierLocal</local>
+            <ejb-link>LoginVerifier</ejb-link>
+         </ejb-local-ref>
+
+      </session>
+
+      <session >
+         <description>Libr EJB module: User Registration Bean</description>
+
+         <ejb-name>RegisterUserBean</ejb-name>
+
+         <local-home>business.ejb.registration.RegisterUserHome</local-home>
+         <local>business.ejb.registration.RegisterUserLocal</local>
+         <ejb-class>business.ejb.registration.RegisterUserBean</ejb-class>
+         <session-type>Stateless</session-type>
+         <transaction-type>Container</transaction-type>
+
+         <ejb-local-ref >
+            <ejb-ref-name>RegisterUserBean</ejb-ref-name>
+            <ejb-ref-type>Session</ejb-ref-type>
+            <local-home>business.ejb.registration.RegisterUserHome</local-home>
+	      <local>business.ejb.registration.RegisterUserLocal</local>
+            <ejb-link>RegisterUserBean</ejb-link>
+         </ejb-local-ref>
+
+      </session>
+
+      <session >
+	<!-- This bean is for searching -->
+         <description>This bean is for doing book searching  for Libra Book Store Application</description>
+
+         <ejb-name>SearchBookBean</ejb-name>
+         <local-home>business.ejb.search.SearchBookHome</local-home>
+         <local>business.ejb.search.SearchBookLocal</local>
+         <ejb-class>business.ejb.search.SearchBookBean</ejb-class>
+         <session-type>Stateless</session-type>
+         <transaction-type>Container</transaction-type>
+
+         <ejb-local-ref >
+            <ejb-ref-name>SearchBookBean</ejb-ref-name>
+            <ejb-ref-type>Session</ejb-ref-type>
+            <local-home>business.ejb.search.SearchBookHome</local-home>
+	      <local>business.ejb.search.SearchBookLocal</local>
+            <ejb-link>SearchBookBean</ejb-link>
+         </ejb-local-ref>
+
+      </session>
+
+
+
+     <!--
+       To add session beans that you have deployment descriptor info for, add
+       a file to your merge directory called session-beans.xml that contains
+       the <session></session> markup for those beans.
+     -->
+
+      <!-- Entity Beans -->
+
+     <!--
+       To add entity beans that you have deployment descriptor info for, add
+       a file to your merge directory called entity-beans.xml that contains
+       the <entity></entity> markup for those beans.
+     -->
+
+      <!-- Message Driven Beans -->
+     <!--
+       To add message driven beans that you have deployment descriptor info for, add
+       a file to your merge directory called message-driven-beans.xml that contains
+       the <message-driven></message-driven> markup for those beans.
+     -->
+	
+	   <message-driven>
+	      <ejb-name>BookOrderReceiverBean</ejb-name>
+      	 <ejb-class>business.ejb.purchase.BookOrderReceiverBean</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-selector></message-selector>
+            <message-driven-destination>
+            <destination-type>javax.jms.Queue</destination-type>
+            </message-driven-destination>
+	  </message-driven>
+
+
+   </enterprise-beans>
+
+   <!-- Relationships -->
+
+   <!-- Assembly Descriptor -->
+   <assembly-descriptor >
+
+   <!-- finder permissions -->
+
+   <!-- transactions -->
+   <container-transaction >
+      <method >
+         <ejb-name>LoginVerifierBean</ejb-name>
+         <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+   </container-transaction>
+
+   <container-transaction >
+      <method >
+         <ejb-name>RegisterUserBean</ejb-name>
+         <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+   </container-transaction>
+
+
+   <container-transaction >
+      <method >
+         <ejb-name>SearchBookBean</ejb-name>
+         <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+   </container-transaction>
+
+   <!-- finder transactions -->
+   </assembly-descriptor>
+
+</ejb-jar>

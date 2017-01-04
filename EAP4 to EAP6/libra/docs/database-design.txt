@@ -1,0 +1,55 @@
+Data base server: Mysql
+Database Name: libra
+
+tables:
+
+	// This tables are populated and accessed by Session beans or Entity Beans
+
+	create table user_profile
+	(
+	user_name varchar(100) primary key,
+	password varchar(100),
+	email varchar(100),
+	address varchar(200),
+	phone varchar(15)
+	);
+
+	// This can be filled manually as of now!
+
+	create table stack
+	(
+	book_isbn varchar(100) primary key,
+	book_name varchar(200),
+	book_authors varchar(500),		
+	book_qty int(3),
+	price int(3)
+	);
+
+// And dont forget to insert some sample records in the 'stack' table. Or just run the following commands;
+
+insert into stack values('1789','Java:How not to progrm.', 'Not you, Not me', 25, 100);
+insert into stack values('1649','Are you still J2EE?, Java EE 5 smirks at you!', 'Don brown, Maria', 15, 150);
+insert into stack values('4719','EJB Sucks!', 'David, John', 35, 130);
+
+	
+	// After the user places an order, a MD bean place a record in this table.
+	// 'status' field takes any one of the following values: 'ORDER PENDING' or 'SHIPPED' or 'CANCELLED' or whatever you find traditional!
+	
+	create table user_purchase_history
+	(
+	user_name varchar(100),
+	book_isbn varchar(100),
+	receiver_name varchar(200),
+	phone varchar(100),
+	email varchar(100),
+	credit_no varchar(100),
+	shipping_address varchar(500),
+	amount_paid int,
+	status varchar(100),
+	date_of_order date	
+	);
+
+	
+	
+	
+
