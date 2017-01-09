@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<!-- 
+  - @(#)    : struts-config.xml
+  - Version : 1.0
+  - Author  : Manivannan Palanichamy (manivannan.p <at> gmail.com)
+  - Date    : 17th May 2005
+  - Licence : General Public License (GPL)
+  - Desc    : This is the only struts-config file used for this application.
+  -   	  Has, action mappings, form bean definition, custom controller, tiles plugin, message file location
+  -           them into archieves and deploy into the server
+  -->
+
+
+<struts-config>
+
+
+
+
+    <!-- ======== Form Bean Definitions =================================== -->
+
+
+    <form-beans>
+        <form-bean name="LoginForm" type="com.libra.login.LoginForm"/>
+        <form-bean name="SearchForm" type="com.libra.search.SearchForm"/>
+        <form-bean name="RegistrationForm" type="com.libra.registration.RegistrationForm"/>
+        <form-bean name="PurchaseForm" type="com.libra.purchase.PurchaseForm"/>
+    </form-beans>
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+<!--  ===================== Login specific action mappings========================-->
+
+  <action-mappings>
+
+    <action    path      = "/login"
+               type      = "com.libra.login.LoginAction"
+               name      = "LoginForm"
+               scope     = "request"
+               validate  = "true"
+               input     = "/jsps/customer/loginIndex.jsp"
+     >
+        <forward name="loginSuccess" path="/jsps/customer/login/customerLoggedIn.jsp" />
+
+      <forward name="loginFailed" path="/jsps/customer/login/loginFailed.jsp" />
+
+   </action>
+
+<!-- This action is an example of 'Action Only' type. This logs off the customer from the session -->
+
+	<action   path="/logout"
+	          type="com.libra.login.LogoutAction"
+	>
+	<forward name="logoutSuccess" path="/jsps/customer/login/customerLoggedOut.jsp"/>
+	</action>
+
+<!-- This action takes the customer to the home after successful login -->
+
+    <action    path      = "/home"  forward   = "/jsps/customer/login/customerLoggedIn.jsp" />
+
+<!-- This is initial welcome page -->
+
+    <action    path      = "/welcome"  forward   = "/jsps/customer/login/index.jsp" />
+
+<!-- ========================Search Specifig Action Mappings ======================================== -->
+
+
+<!-- This action takes the customer to the search page's index -->
+
+    <action    path      = "/search-index" forward   = "/jsps/customer/search/searchIndex.jsp" />
+
+
+<!-- This takes to search action servlet -->
+
+
+    <action    path      = "/search"
+               type      = "com.libra.search.SearchAction"
+               name      = "SearchForm"
+               scope     = "request"
+               validate  = "true"
+               input     = "/jsps/customer/search/searchResult.jsp"
+     >
+        <forward name="searchResult" path="/jsps/customer/search/searchResult.jsp" />
+	<forward name="noSearchResult" path="/jsps/customer/search/noSearchResult.jsp" />
+
+
+    </action>
+
+
+<!-- ======================== Purchase, Ordering Specific Action Mappings ===============================-->
+
+<!-- This action is for placing a customer order on the queue -->
+
+    <action    path      = "/placeOrder"
+               type      = "com.libra.purchase.PurchaseAction"
+               name      = "PurchaseForm"
+               scope     = "request"
+               validate  = "true"
+               input     = "/jsps/customer/purchase/displayPurchaseDetails.jsp"
+
+     >
+        <forward name="orderOk" path="/jsps/customer/purchase/orderPlaced.jsp" />
+    </action>
+
+<!--This action it to display the purchase details, and prompt for customer credit details -->
+
+    <action    path      = "/purchase" forward="/jsps/customer/purchase/displayPurchaseDetails.jsp" />
+
+
+<!-- ======================== New Registration Specific Action Mappings ===============================-->
+
+
+<!-- This action mapping is for registering new customer account -->
+    <action    path      = "/register"
+               type      = "com.libra.registration.RegistrationAction"
+               name      = "RegistrationForm"
+               scope     = "request"
+               validate  = "true"
+               input     = "/jsps/customer/registration/registrationIndex.jsp"
+     >
+        <forward name="registrationSuccess" path="/jsps/customer/registration/registrationSuccess.jsp" />
+        <forward name="registrationFailed"  path="/jsps/customer/registration/registrationFailed.jsp"/>
+
+    </action>
+
+
+  </action-mappings>
+
+
+
+  <!-- ========== This is our custom request processor. Nice guy! =========================== -->
+
+
+	<controller>
+		<set-property  property="processorClass" value="com.libra.requestProcessor.CustomRequestProcessor"/>
+	</controller>
+
+  <!-- ========== Message Resources Definitions =========================== -->
+
+
+  <message-resources parameter="com.libra.messages.Libra"/>
+
+<!-- ============== Tile specific plugin information ============================ -->
+
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+  <!-- Path to XML definition file -->
+  <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+  <!-- Set Module-awareness to true -->
+  <set-property property="moduleAware" value="true" />
+  </plug-in>
+
+</struts-config>
+

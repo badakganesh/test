@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+          "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!-- 
+  - @(#)    : tiles-defs.xml
+  - Version : 1.0
+  - Author  : Manivannan Palanichamy (manivannan.p <at> gmail.com)
+  - Date    : 17th May 2005
+  - Licence : General Public License (GPL)
+  - Desc    : This file has set of tile definitions.
+  -   	  
+  -           
+  -->
+
+
+<tiles-definitions>
+
+<!-- This layout is used for displaying the welcome screen, login, login success/failure scree-->
+	
+	<definition name="customer" path="/jsps/layouts/customerHome.jsp">
+		<put name="header" value="/jsps/layouts/customerHeader.jsp" />
+		<put name="body" value="/jsps/layouts/login.jsp" />
+		<put name="footer" value="/jsps/layouts/customerFooter.jsp" />
+	</definition>
+
+	<definition name="customerIndex" path="/jsps/tiles/customerIndex.jsp">
+		<put name="header" value="/jsps/layouts/customerHeader.jsp" />
+
+<!-- This menu is the only extra parameter in this definition. This layout is used to display the menu after the customer login-->
+		<put name="menu" value="/jsps/layouts/customerMenu.jsp" />
+		<put name="body" value="/jsps/layouts/login.jsp" />
+		<put name="footer" value="/jsps/layouts/customerFooter.jsp" />
+	</definition>
+
+	
+</tiles-definitions>

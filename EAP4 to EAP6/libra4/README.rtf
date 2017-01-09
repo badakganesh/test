@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Verdana;}{\f1\fnil\fprq2\fcharset2 Wingdings;}{\f2\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\b\f0\fs20 About\par
+\tab\b0 This project is a simple book store application developed in J2EE/Struts using JBoss/Mysql. The project can be a reference for those interested in learning Struts, J2EE. In this first version of the project, front end is facilitated by Struts common tags (html, bean, and logic), a custom controller (Request Processor), and tiles. Business logic is implemented using EJBs (Stateless Session Beans, Message Driven Beans (Queue type)). This project will be periodically facilitated with new modules and new components.\par
+\par
+\tab I hold no license over this project. You can play around with the code and really that is the purpose what I built for. You can write to me for any clarification, suggestion and further improvement.\par
+\par
+\pard\tqc\tx4320 -\tab\par
+\pard\i Manivannan Palanichamy <manivannan.p (at) gmail.com>\par
+\i0\par
+\par
+\b Installation \par
+\b0\par
+\tab The following things are prerequisite for running the project.\par
+\par
+\pard\fi-360\li720\tx720 1.\tab Java Development Kit (jdk1.5.0_03 or above)\par
+\pard\fi-360\li720 2.\tab JBoss Application Server (jboss-4.0.3SP1)\par
+3.\tab Mysql (I am not sure about the version, anyway I used \lquote MySQL Server 5.0\rquote )\par
+4.\tab Mysql Connector Library (Only \lquote mysql-connector-java-3.1.12-bin.jar\rquote  ). (You can leave this step as the project already has the jar it-self)\par
+\pard\li360 5. We are running this project in default configuration of Jboss.\par
+\par
+\pard\qj Installation instructions:\par
+\par
+\pard\fi-360\li720\qj\tx720 1.\tab Download the file libra.zip from the project site and unzip it. (hope, you already done this). Now the directory \lquote libra\rquote  is created.\par
+\pard\fi-360\li720\qj 2.\tab Let us assume <project-home> refer to the \lquote libra\rquote  directory.\par
+3.\tab To configure the database:\par
+\pard\li360\qj\tab Go to the directory: <project-home>\\src\\ejb\\business\\database\\db\par
+\tab Open the file LibraDBConnection.java .\par
+\tab Change the data base driver name to yours accordingly. (If you use Mysql, you \tab can leave it).\par
+\tab Change the connection url. (change database_name,user_name_password accordingly)\par
+And create the tables mentioned in the file <project-home>\\docs\\database-design.txt under the data base you have chosen.\par
+Insert some sample records into stack table as mentioned in the script;\par
+\par
+\par
+4. If you use mysql, put the mysql driver file (\lquote mysql-connector-java-3.1.12-bin.jar\rquote ) under <jboss-home>/server/default/deploy/lib\par
+(You can leave this step, as the project already has the jar )\par
+\par
+5.  To add a new Queue (for the project\rquote s MD Bean),  open the file <jboss-home>\\server\\default\\deploy\\jms\\jbossmq-destinations-service.xml\par
+\par
+and add these lines:\par
+\par
+\pard <mbean code="org.jboss.mq.server.jmx.Queue"\par
+\tab  name="jboss.mq.destination:service=Queue,name=myQueue">\par
+    <depends optional-attribute-name="DestinationManager">jboss.mq:service=DestinationManager</depends>\par
+</mbean>\par
+\par
+\pard\fi-360\li720\tx720 6.\tab Open the file: <project-home>\\run.bat (Don\rquote t run, just open)\par
+\pard\fi-360\li1200\tx1200 1.\tab Edit the PATH variable according to yours. Note that the PATH variable must include the path for ant, jdk\rquote s bin directory and for jboss\rquote s bin directory\par
+\pard\fi-360\li1200 2.\tab Edit the variable JAVA_HOME according to yours JDK location\par
+3.\tab Edit the JBOSS_HOME variable according to yours jboss location.\par
+\pard\li360\par
+\pard\fi-360\li720\tx720 7.\tab Now pray God \f1 J\f0\par
+\pard\fi-360\li720 8.\tab Run the run.bat file\par
+9.\tab If build is successful, then start your Jboss server.\par
+10.\tab type: http://localhost:8080/libra\par
+\pard\li360\par
+Are you seeing something (other than errors)? Then, we are done! \par
+\par
+\par
+\b Project Directory Organization\par
+\b0\par
+\par
+<Project-home>\par
+|\par
++-- build.xml (This file is the guru, helps to compile, pack and deploy the source)\par
+|\par
++-- src (has all the source code)\par
+\tab    |\par
+\tab    +-- ejb (has ejb, business specific sources)\par
+\tab\tab   |\par
+\tab\tab   +-- META-INF (has descriptors for ejb \{ejb-jar.xml and jboss.xml\})\par
+\tab\tab   +-- business\par
+\tab\tab\tab\tab |\par
+\tab\tab\tab\tab  +-- database (has database specific directories)\par
+\tab\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab\tab  +-- db (has basic connection classes)\par
+\tab\tab\tab\tab\tab\tab  +-- login (has login check db code)\tab\par
+\tab\tab\tab\tab\tab\tab  +-- registration (has user-reg db code)\par
+    \tab\tab\tab\tab\tab\tab  +-- search (has book search db code)\par
+\tab\tab\tab\tab\tab             +--purchase (has purchase module code)\par
+\par
+ \tab\tab\tab\tab |\par
+\tab\tab\tab\tab +-- ejb (has EJB components)\par
+\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab +-- general (has general classes like helpers)\par
+\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab +-- login (has login EJB modules)\par
+\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab +-- registration (has user-reg EJB modules)\par
+\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab +-- purchase (has purchase EJB modules)\par
+\tab\tab\tab\tab\tab |\par
+\tab\tab\tab\tab\tab +-- search (has book searching EJB modules)\par
+\par
+\par
+\par
+\tab\tab\tab\tab\tab\par
+\par
+\pard\li360\qj |\par
++-- web (has source files, directories for web components)\tab\par
+\tab      |\par
+\tab      +-- common (has common resource files)\par
+\tab      |\par
+\tab      +-- jsps (has jsp source files, layouts, htmls)\par
+\tab\tab      |\par
+\tab\tab   \tab   +-- customer (has jsp files for customer operations like login, \tab reg, search and etc)\par
+\tab\tab\tab     |\par
+\tab\tab\tab     +-- layouts (has layout files)\par
+\tab\tab\tab     |\par
+\tab\tab\tab     +-- tiles (has tiles)\par
+\tab\tab |\par
+\tab\tab +-- WEB-INF (all config, class, lib and etc)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- web.xml (Servlet config and etc)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- jboss-web.xml (jboss specific web info)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- struts-config.xml (this is the only config file, has entry \tab for tiles plugin, custom controller, forwards and blah, blah)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- tiles.xml (has tiles definitions)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- lib (has jars for JSTL 1.1, Struts 1.1 and mysql)\par
+\tab           \tab                  |\par
+\tab\tab\tab        +-- classes (has compile classes)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- tlds (has custom and struts tlds)\par
+            \tab\tab        |\par
+\tab\tab\tab        +-- tags (has tag handlers)\par
+\tab\tab\tab        |\par
+\tab\tab\tab        +-- src (This directory has all the struts sour code for each modules (ActionClass and ActionForm))\par
+\par
+\par
+\pard\li360 |\par
++-- bin (has all the binary files and deployable jars, war, ear. Ant puts all the compiled jar, war, ear in this folder, sub-folders accordingly)\par
+\tab     |\par
+\tab     +-- web (has the complete web modules in compile form)\par
+\tab     |\par
+\tab     +-- ejb (has the complete ejb modules in compile form)\par
+\tab     |\par
+\tab     +-- ear (has ejb jar, web war and META-INF and deployable ear)\par
+\tab\tab    |\par
+\tab\tab    +-- META-INF (has application.xml)\par
+\par
+\par
+\par
+\b Modifying Source, Recompiling and Redeploying         \par
+\par
+\b0\tab Yes, you can do all such game! Change/add/remove code/features as you want and just run the <project-home>\\run.bat file, that will compile all the stuffs, pack and redeploy into Jboss\par
+\par
+\b Final Words\par
+\par
+\b0 Hack and Learn!\i\par
+\pard\i0\f2\par
+\par
+}
+ 
